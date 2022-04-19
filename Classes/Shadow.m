@@ -249,6 +249,20 @@
     || [name containsString:@"IntelliScreen"]
     || [name containsString:@"Tweak"]
     || [name containsString:@"TSEventTweak"]
+    || [name containsString:@"0Shadow"]
+    || [name containsString:@"libhooker"]
+    || [name containsString:@"AppList"]
+    || [name containsString:@"CepheiSpringBoard"]
+    || [name containsString:@"PreferenceLoader"]
+    || [name containsString:@"RocketBootstrap"]
+    || [name containsString:@"TSActivator"]
+    || [name containsString:@"TSEventTweak"]
+    || [name containsString:@"TSTweak"]
+    || [name containsString:@"appstoreplus"]
+    || [name containsString:@"appstoreplusSB"]
+    || [name containsString:@"appstoreplusUI"]
+    || [name containsString:@"bbp.dylib"]
+    || [name containsString:@"zorro"]
     || [name containsString:@"libSystem"])
     {
         return YES;
