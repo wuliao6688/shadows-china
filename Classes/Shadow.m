@@ -171,17 +171,86 @@
     || [name hasPrefix:@"/usr/lib/TweakInject"]
     || [name hasPrefix:@"/var/containers/Bundle/tweaksupport"]
     || [name hasPrefix:@"/var/containers/Bundle/dylibs"]
+    || [name hasPrefix:@"/Library/TweakInject"]
+    || [name hasPrefix:@"/Library/LaunchDaemons/"]
+    || [name hasPrefix:@"/Library/MobileSubstrate/DynamicLibraries"]
+    || [name hasPrefix:@"/Library/MobileSubstrate/MobileSubstrate.dylib"]
+    || [name hasPrefix:@"/Applications/iGameGuardian.app"]
+    || [name hasPrefix:@"/Applications/GamePlayer.app"]
+    || [name hasPrefix:@"/usr/lib/libSystem"]
+    || [name hasPrefix:@"/usr/lib/libSystem_kernel.dylib"]
+    || [name hasPrefix:@"/Applications/GamePlayerapp"]
+    || [name hasPrefix:@"/Library/MobileSubstrate/DynamicLibraries"]
+    || [name hasPrefix:@"/Library/MobileSubstrate/DynamicLibraries/AppList.plist"]
+    || [name hasPrefix:@"/Library/MobileSubstrate/DynamicLibraries/FLExing.plist"]
+    || [name hasPrefix:@"/Library/MobileSubstrate/DynamicLibraries/Preferenceloader.plist"]
+    || [name hasPrefix:@"/Library/MobileSubstrate/DynamicLibraries/MobileSafety.plist"]
+    || [name hasPrefix:@"/Library/MobileSubstrate/DynamicLibraries/ALS.plist.bak"]
+    || [name hasPrefix:@"/Library/MobileSubstrate/DynamicLibraries/RocketBootstrap.plist"]
+    || [name hasPrefix:@"/Library/MobileSubstrate/DynamicLibraries/TSActivator.plist"]
+    || [name hasPrefix:@"/Library/MobileSubstrate/DynamicLibraries/TSEventTweak.plist"]
+    || [name hasPrefix:@"/bin/bash"]
+    || [name hasPrefix:@"/Applications/Cydia.app"]
+    || [name hasPrefix:@"/Library/MobileSubstrate/MobileSubstrate.dylib"]
+    || [name hasPrefix:@"/user/Applictations"]
+    || [name hasPrefix:@"/user/Continers/Bundle/Application"]
+    || [name hasPrefix:@"/usr/sbin/sshd"]
+    || [name hasPrefix:@"/etc/apt"]
+    || [name hasPrefix:@"/Applications/RockApp.app"]
+    || [name hasPrefix:@"/Applications/Icy.app"]
+    || [name hasPrefix:@"/usr/sbin/sshd"]
+    || [name hasPrefix:@"/usr/bin/sshd"]
+    || [name hasPrefix:@"/usr/libexec/sftp-server"]
+    || [name hasPrefix:@"/Applications/WinterBoard.app"]
+    || [name hasPrefix:@"/Applications/SBSettings.app"]
+    || [name hasPrefix:@"/Applications/MxTube.app"]
+    || [name hasPrefix:@"/Applications/IntelliScreen.app"]
+    || [name hasPrefix:@"/Library/MobileSubstrate/DynamicLibraries/Veency.plist"]
+    || [name hasPrefix:@"/Library/MobileSubstrate/DynamicLibraries/LiveClock.plist"]
+    || [name hasPrefix:@"/private/var/lib/apt"]
+    || [name hasPrefix:@"/private/var/stash"]
+    || [name hasPrefix:@"/System/Library/LaunchDaemons/com.ikey.bbot.plist"]
+    || [name hasPrefix:@"/System/Library/LaunchDaemons/com.saurik.Cydia.Startup.plist"]
+    || [name hasPrefix:@"/private/var/tmp/cydia.log"]
+    || [name hasPrefix:@"/private/var/lib/cydia"]
+    || [name hasPrefix:@"/etc/clutch.conf"]
+    || [name hasPrefix:@"/var/cache/clutch.plist"]
+    || [name hasPrefix:@"/etc/clutch_cracked.plist"]
+    || [name hasPrefix:@"/var/cache/clutch_cracked.plist"]
+    || [name hasPrefix:@"/var/lib/clutch/overdrive.dylib"]
+    || [name hasPrefix:@"/var/root/Documents/Cracked/"]
+    || [name hasPrefix:@"/etc/fstab"]
     || [name containsString:@"Substrate"]
     || [name containsString:@"substrate"]
     || [name containsString:@"substitute"]
     || [name containsString:@"Substitrate"]
     || [name containsString:@"TweakInject"]
     || [name containsString:@"jailbreak"]
+    || [name containsString:@"jailbroke"]
+    || [name containsString:@"jailbroken"]
+    || [name containsString:@"root"]
     || [name containsString:@"cycript"]
     || [name containsString:@"SBInject"]
     || [name containsString:@"pspawn"]
     || [name containsString:@"rocketbootstrap"]
-    || [name containsString:@"bfdecrypt"]) {
+    || [name containsString:@"bfdecrypt"]
+    || [name containsString:@"file_sys"]
+    || [name containsString:@"sshd"]
+    || [name containsString:@"cydia"]
+    || [name containsString:@"MobileSubstrate"]
+    || [name containsString:@"saurik"]
+    || [name containsString:@"touchsprite"]
+    || [name containsString:@"zorro"]
+    || [name containsString:@"com.apple.afcd"]
+    || [name containsString:@"Filza"]
+    || [name containsString:@"firmware"]
+    || [name containsString:@"ssh-keysign"]
+    || [name containsString:@"bootstrapped"]
+    || [name containsString:@"IntelliScreen"]
+    || [name containsString:@"Tweak"]
+    || [name containsString:@"TSEventTweak"]
+    || [name containsString:@"libSystem"])
+    {
         return YES;
     }
 
@@ -257,13 +326,12 @@
     // Exclude some paths under tweak compatibility mode.
     if(_useTweakCompatibilityMode) {
         if([path hasPrefix:@"/Library/Application Support"]
-        || [path hasPrefix:@"/Library/Frameworks"]
-        || [path hasPrefix:@"/Library/Themes"]
-        || [path hasPrefix:@"/Library/SnowBoard"]
-        || [path hasPrefix:@"/Library/PreferenceBundles"]
-        || [path hasPrefix:@"/var/mobile/Library/Preferences"]
-        || [path hasPrefix:@"/User/Library/Preferences"]) {
-            NSLog(@"unrestricted path (tweak compatibility): %@", path);
+     || [path hasPrefix:@"/Library/Frameworks"]
+     || [path hasPrefix:@"/Library/Themes"]
+     || [path hasPrefix:@"/Library/SnowBoard"]
+     || [path hasPrefix:@"/Library/PreferenceBundles"]
+     || [path hasPrefix:@"/var/mobile/Library/Preferences"]
+     || [path hasPrefix:@"/User/Library/Preferences"]) {
             return NO;
         }
     }
@@ -334,7 +402,7 @@
     // Package manager URL scheme checks
     if([[url scheme] isEqualToString:@"cydia"]
     || [[url scheme] isEqualToString:@"sileo"]
-    || [[url scheme] isEqualToString:@"zbra"]) {
+    || [[url scheme] isEqualToString:@"zebra"]) {
         return YES;
     }
 
@@ -403,7 +471,7 @@
                 [self addPath:path restricted:YES];
             } else {
                 if([path hasPrefix:@"/usr/lib"]
-                || [path hasPrefix:@"/Library/MobileSubstrate"]) {
+             || [path hasPrefix:@"/Library/MobileSubstrate"]) {
                     [image_set addObject:path];
 
                     if(_useTweakCompatibilityMode) {
@@ -428,12 +496,12 @@
         // Exclude some paths under tweak compatibility mode.
         if(_useTweakCompatibilityMode) {
             if([from hasPrefix:@"/Library/Application Support"]
-            || [from hasPrefix:@"/Library/Frameworks"]
-            || [from hasPrefix:@"/Library/Themes"]
-            || [from hasPrefix:@"/Library/SnowBoard"]
-            || [from hasPrefix:@"/Library/PreferenceBundles"]
-            || [from hasPrefix:@"/var/mobile/Library/Preferences"]
-            || [from hasPrefix:@"/User/Library/Preferences"]) {
+         || [from hasPrefix:@"/Library/Frameworks"]
+         || [from hasPrefix:@"/Library/Themes"]
+         || [from hasPrefix:@"/Library/SnowBoard"]
+         || [from hasPrefix:@"/Library/PreferenceBundles"]
+         || [from hasPrefix:@"/var/mobile/Library/Preferences"]
+         || [from hasPrefix:@"/User/Library/Preferences"]) {
                 return;
             }
         }
